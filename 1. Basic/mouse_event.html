@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        .out {
+            width: 200px;
+            height: 60px;
+            background-color: yellow;
+        }
+        .boxes {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid red;
+            display: inline-block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="boxes">
+        <div class="out">
+            <p>move your mouse over here</p>
+            <p>0</p>
+        </div>
+    </div>  
+    <script>
+        var i = 0;
+        $(".out").mouseover(function () {
+            $("p:first", this).text("mouse over");
+            $("p:last", this).text(++i);
+        });
+    </script>
+
+    <div class="boxes">
+        ID: <input type="text" name="name">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "yellow");
+            });
+            $("input").blur(function () {
+                $(this).css("background-color", "white");
+            });
+        });
+    </script>
+
+    <div class="boxes">
+        <button id="button2">show it</button>
+        <img src="../img/dog.jpg" id="dog" width="220" height="150" style="display: none;">
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#button2").click(function () {
+                $("#dog").toggle();
+            });
+        });
+    </script>
+
+    <div class="boxes">
+        <img src="../img/dog.jpg" alt="" id="dog1" width="220" style="position: relative;"><br>
+        <button id="button1">animate()</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $("#dog1").animate({left : "100px", opacity: '0.5', width: '300px'});
+            });
+        });
+    </script>
+
+    <div class="boxes">
+        <button id="fadeIn">fadeIn()</button>
+        <button id="fadeOut">fadeOut()</button>
+        <img src="../img/dog.jpg" id="dog3" width="220px" style="display: none; position: relative;" alt="">
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#fadeIn").click(function () {
+                $("#dog3").fadeIn("slow");
+            });
+            $("#fadeOut").click(function () {
+                $("#dog3").fadeOut("slow");
+            });
+        });
+    </script>
+
+    <div class="boxes">
+        <button id="button3">method chaining</button>
+        <img src="../img/dog.jpg" id="dog4" width="220px" style="display: none;" alt="">
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#button3").click(function () {
+                $("#dog4").show().fadeOut().slideDown("slow");
+            });
+        });
+    </script>
+</body>
+</html>
