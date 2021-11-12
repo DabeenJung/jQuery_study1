@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        .boxes {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid red;
+            display: inline-block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="boxes">
+        name: <input type="text" name="" id="target"><br>
+        <button id="text">val</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                alert($("#target").val());
+            });
+        });
+    </script>
+
+    <div class="boxes">
+        <img src="../img/dog.jpg" width="220px" id="dog1" alt="">
+        <button id="attr">attr()</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#attr").click(function () {
+                alert($("#dog1").attr("src"));
+            });
+        });
+    </script>
+</body>
+</html>

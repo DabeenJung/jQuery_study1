@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        .boxes {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid red;
+            display: inline-block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="boxes">
+        <p id="target">This is <strong>one</strong> paragraph.</p>
+        <button id="text">text()</button>
+        <button id="html">html()</button>
+        <button id="changeText">change text</button>
+        <button id="changeHtml">change html</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#text").click(function (){
+                alert($("#target").text());
+            });
+            $("#html").click(function () {
+                alert($("#target").html());
+            });
+            $("#changeText").click(function () {
+                $("#target").text("Hello?");
+            });
+            $("#changeHtml").click(function () {
+                $("#target").html("<b>Hello</b>");
+            });
+        });
+    </script>
+</body>
+</html>
